@@ -1,8 +1,14 @@
 Research:
 
-https://www.geeksforgeeks.org/program-for-all-operations-on-circular-linked-list-in-c/
-
 https://www.geeksforgeeks.org/implementation-of-stack-using-doubly-linked-list/
+
+https://www.geeksforgeeks.org/structures-c/
+
+https://www.geeksforgeeks.org/typedef-in-c/?ref=lbp
+
+
+
+https://www.geeksforgeeks.org/program-for-all-operations-on-circular-linked-list-in-c/
 
 https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 

@@ -7,7 +7,9 @@ CC := cc
 
 CFLAGS := -Wall -Wextra -Werror
 
-SRC := push_swap.c
+SRC := push_swap.c stack.c \
+ft_error.c
+
 OBJ := $(SRC:.c=.o)
 
 all: $(NAME)

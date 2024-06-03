@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:30:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/05/31 12:18:51 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:04:04 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ int	main(int argc, char **argv)
 {
 	// if (argc == 1)
 	// 	ft_printf(argv[0]);
+	int		i;
+	stack	*a;
 
-	int	i;
-
+	a = NULL;
 	i = 1;
 
 	if (argc == 1)
@@ -36,9 +37,11 @@ int	main(int argc, char **argv)
 
 		while (i < argc)
 		{
-			ft_printf("%s\n", argv[i]);
+			stack_add_back(&a, stack_new(ft_atoi(argv[i])));
 			i++;
 		}
 	}
+	stack_print(a);
+	free_stack(&a);
 	return (0);
 }

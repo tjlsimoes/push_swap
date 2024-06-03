@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/05/31 11:00:33 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:58:38 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,19 @@
 
 #include "libft/libft.h"
 #include "printf/ft_printf.h"
+
+typedef struct stack {
+    long			nbr;
+    struct stack	*next;
+	long			idx;
+} stack;
+
+void	ft_error(void);
+
+void	free_stack(stack **s);
+stack	*last_on_stack(stack **s);
+stack	*stack_new(int	content);
+void	stack_add_back(stack **s, stack *new);
+void	stack_print(stack *s);
 
 #endif
