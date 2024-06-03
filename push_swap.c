@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:30:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/03 15:40:48 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:05:05 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	// if (argc == 1)
 	// 	ft_printf(argv[0]);
 	int		i;
-	int		nbr;
+	long long	nbr;
 	stack	*a;
 
 	a = NULL;
@@ -39,6 +39,12 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			nbr = ft_atoi_alt(argv[i]);
+			// Not freeing stack if there's an error mid parsing.
+			if (nbr == 2147483648)
+			{
+				free_stack(&a);
+				ft_error();
+			}
 			stack_add_back(&a, stack_new(nbr));
 			i++;
 		}

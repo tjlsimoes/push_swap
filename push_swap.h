@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/03 15:34:57 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:01:00 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct stack {
 
 void	ft_error(void);
 
-int		ft_atoi_alt(char *str);
+long	ft_atoi_alt(char *str);
 
 void	free_stack(stack **s);
 stack	*last_on_stack(stack **s);

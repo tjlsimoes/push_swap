@@ -6,13 +6,13 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:21:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/03 15:54:45 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:10:06 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi_alt(char *str)
+long	ft_atoi_alt(char *str)
 {
 	int	sign;
 	long long nbr;
@@ -36,6 +36,6 @@ int	ft_atoi_alt(char *str)
 	}
 	nbr = nbr * sign;
 	if (nbr < INT_MIN || nbr > INT_MAX)
-		ft_error();
+		return ((long)(INT_MAX + 1));
 	return (nbr);
 }
