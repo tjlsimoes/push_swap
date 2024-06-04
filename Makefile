@@ -9,6 +9,7 @@ CFLAGS := -Wall -Wextra -Werror
 
 SRC := push_swap.c stack.c \
 ft_error.c ft_atoi_alt.c ft_split_size.c \
+split_clear.c
 
 OBJ := $(SRC:.c=.o)
 
