@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/03 15:22:10 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:00:01 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-stack	*stack_new(int content)
+t_stack	*stack_new(int content)
 {
-	stack	*new;
+	t_stack	*new;
 	
-	new = (stack *)malloc(sizeof(stack));
+	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		ft_error();
 	new->nbr = content;
@@ -24,9 +24,9 @@ stack	*stack_new(int content)
 	return (new);
 }
 
-stack	*last_on_stack(stack **s)
+t_stack	*last_on_stack(t_stack **s)
 {
-	stack	*node;
+	t_stack	*node;
 
 	if (!s || !*s)
 		return (NULL);
@@ -36,7 +36,7 @@ stack	*last_on_stack(stack **s)
 	return (node);
 }
 
-void	stack_add_back(stack **s, stack *new)
+void	stack_add_back(t_stack **s, t_stack *new)
 {
 	if (!new || !s)
 		return ;
@@ -46,7 +46,7 @@ void	stack_add_back(stack **s, stack *new)
 		(last_on_stack(s))->next = new;
 }
 
-void	stack_print(stack *s)
+void	stack_print(t_stack *s)
 {
 	if (!s)
 	{
@@ -62,10 +62,10 @@ void	stack_print(stack *s)
 	ft_printf("\n");
 }
 
-void	free_stack(stack **s)
+void	free_stack(t_stack **s)
 {
-	stack	*previous;
-	stack	*current;
+	t_stack	*previous;
+	t_stack	*current;
 
 	if (!s || !*s)
 		return ;
