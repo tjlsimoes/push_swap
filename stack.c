@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/04 16:00:01 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:13:26 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	*stack_new(int content)
 {
 	t_stack	*new;
-	
+
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		ft_error();

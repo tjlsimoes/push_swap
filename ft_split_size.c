@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 10:31:36 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/04 10:39:44 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:15:37 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	ft_split_size(char **split)
 		return (0);
 	i = 0;
 	while (split[i])
-		i++;	
+		i++;
 	return (i);
 }
