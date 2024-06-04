@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:30:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/03 16:05:05 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/04 10:22:59 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,9 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		// Either several numeric args or
-		// combination of numeric args and string
-		// from which stack will have to be initialized
-		// or process interrupted.
-
 		while (i < argc)
 		{
 			nbr = ft_atoi_alt(argv[i]);
-			// Not freeing stack if there's an error mid parsing.
 			if (nbr == 2147483648)
 			{
 				free_stack(&a);
