@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/04 16:08:50 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:36:45 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ t_stack		*last_on_stack(t_stack **s);
 t_stack		*stack_new(int content);
 void		stack_add_back(t_stack **s, t_stack *new);
 void		stack_print(t_stack *s);
+int			stack_size(t_stack **s);
 
 #endif

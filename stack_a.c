@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/04 16:13:26 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:38:01 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,21 @@ void	stack_add_back(t_stack **s, t_stack *new)
 		(last_on_stack(s))->next = new;
 }
 
-void	stack_print(t_stack *s)
+int	stack_size(t_stack **s)
 {
-	if (!s)
+	t_stack	*node;
+	int		i;
+
+	if (!s || !*s)
+		return (0);
+	i = 0;
+	node = *s;
+	while (node)
 	{
-		ft_printf("\n");
-		return ;
+		i++;
+		node = node->next;
 	}
-	ft_printf("Stack is: ");
-	while (s)
-	{
-		ft_printf("%d  ", s->nbr);
-		s = s->next;
-	}
-	ft_printf("\n");
+	return (i);
 }
 
 void	free_stack(t_stack **s)

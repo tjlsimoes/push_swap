@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_b.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 17:30:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/05 16:37:43 by tjorge-l         ###   ########.fr       */
+/*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
+/*   Updated: 2024/06/05 16:32:42 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	stack_print(t_stack *s)
 {
-	t_stack		*a;
-
-	a = NULL;
-	stack_initialize(argc, argv, &a);
-	stack_print(a);
-	ft_printf("Stack size = %d\n ", stack_size(&a));
-	free_stack(&a);
-	return (0);
+	if (!s)
+	{
+		ft_printf("\n");
+		return ;
+	}
+	ft_printf("Stack is: ");
+	while (s)
+	{
+		ft_printf("%d  ", s->nbr);
+		s = s->next;
+	}
+	ft_printf("\n");
 }
