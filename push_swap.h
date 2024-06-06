@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 12:44:20 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 17:06:01 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ t_stack		*stack_new(int content);
 void		stack_add_back(t_stack **s, t_stack *new);
 void		stack_print(t_stack *s);
 int			stack_size(t_stack **s);
+
+int			sorted_q(t_stack **s);
 
 void		s(t_stack **a);
 void		r(t_stack **a);
