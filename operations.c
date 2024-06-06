@@ -6,13 +6,13 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:27:23 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 12:41:09 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:44:41 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack **a)
+void	s(t_stack **a)
 {
 	t_stack		*first;
 	t_stack		*second;
@@ -26,7 +26,7 @@ void	sa(t_stack **a)
 	second->next = first;
 }
 
-void	ra(t_stack **a)
+void	r(t_stack **a)
 {
 	t_stack		*first;
 	t_stack		*last;
@@ -36,7 +36,7 @@ void	ra(t_stack **a)
 		return ;
 	else if (stack_size(a) == 2)
 	{
-		sa(a);
+		s(a);
 		return ;
 	}
 	first = *a;
@@ -47,7 +47,7 @@ void	ra(t_stack **a)
 	last->next->next = NULL;
 }
 
-void	rra(t_stack **a)
+void	rr(t_stack **a)
 {
 	t_stack		*first;
 	t_stack		*penultimate;
@@ -57,7 +57,7 @@ void	rra(t_stack **a)
 		return ;
 	else if (stack_size(a) == 2)
 	{
-		sa(a);
+		s(a);
 		return ;
 	}
 	penultimate = get_node_by_idx(a, stack_size(a) - 1);

@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:30:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 12:38:33 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:46:56 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int	main(int argc, char **argv)
 	ft_printf("Original A: ");
 	stack_print(a);
 	ft_printf("\n");
-	// sa(&a);
-	// ra(&a);
-	// rra(&a);
+	// s(&a);
+	// r(&a);
+	// rr(&a);
+	// pb(&a, &b);
 	// pb(&a, &b);
 	// pa(&a, &b);
 
@@ -37,7 +38,7 @@ int	main(int argc, char **argv)
 	stack_print(b);
 	ft_printf("\n");
 
-	// ft_printf("Stack size = %d\n ", stack_size(&a));
+	ft_printf("Stack size = %d\n ", stack_size(&a));
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
