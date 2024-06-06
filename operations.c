@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:27:23 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/05 16:58:50 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 11:05:07 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,13 @@ void	sa(t_stack **a)
 {
 	t_stack		*first;
 	t_stack		*second;
-	t_stack		*temp;
 
 	if (stack_size(a) <= 1)
 		return ;
 	first = *a;
 	second = first->next;
-	temp = first;
-	
-	first->next = second->next;
-	first->nbr = second->nbr;
-	first->idx = second->idx;
-	
-	second->next = first;
-	second->nbr = temp->nbr;
-	second->idx = temp->idx;
 
+	first->next = second->next;
 	*a = second;
+	second->next = first;
 }
