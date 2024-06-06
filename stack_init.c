@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:13:22 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/05 16:14:45 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:39:38 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,30 @@ void	numerics_input(int argc, char **argv, t_stack **a)
 	}
 }
 
+int		duplicate_q(t_stack **s)
+{
+	t_stack	*node;
+	t_stack	*other_node;
+	int		i;
+
+	if (!s || !*s)
+		return (0);
+	node = *s;
+	while (node)
+	{
+		i = node->nbr;
+		other_node = node->next;
+		while (other_node)
+		{
+			if (i == other_node->nbr)
+				return (1);
+			other_node = other_node->next;
+		}
+		node = node->next;
+	}
+	return (0);
+}
+
 void	stack_initialize(int argc, char **argv, t_stack **a)
 {
 	if (argc == 1)
@@ -59,4 +83,7 @@ void	stack_initialize(int argc, char **argv, t_stack **a)
 		string_input(argc, argv, a);
 	else
 		numerics_input(argc, argv, a);
+
+	if (duplicate_q(a))
+		free_and_error(a);
 }
