@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:30:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 17:05:10 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 17:08:13 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	stack_initialize(argc, argv, &a);
-	if (sorted_q(&a))
-		ft_printf("Sorted!\n");
+	if (!sorted_q(&a))
+		ft_printf("Not sorted!\n");
 	ft_printf("Original A: ");
 	stack_print(a);
 	ft_printf("\n");
