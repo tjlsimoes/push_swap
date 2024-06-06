@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:27:23 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 12:12:26 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:35:56 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,32 @@ void	rra(t_stack **a)
 	last->next = first;
 	*a = last;
 	penultimate->next = NULL;
+}
+
+void	pa(t_stack **a, t_stack **b)
+{
+	t_stack *top_a;
+	t_stack *top_b;
+
+	if (!b || !*b)
+		return ;
+	top_a = *a;
+	top_b = *b;
+	*b = top_b->next;
+	top_b->next = top_a;
+	*a = top_b;
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	t_stack *top_a;
+	t_stack *top_b;
+
+	if (!a || !*a)
+		return ;
+	top_a = *a;
+	top_b = *b;
+	*a = top_a->next;
+	top_a->next = top_b;
+	*b = top_a;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/05 16:38:01 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:33:26 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*stack_new(int content)
 {
 	t_stack	*new;
 
-	new = (t_stack *)malloc(sizeof(t_stack));
+	new = (t_stack *)ft_calloc(1, sizeof(t_stack));
 	if (!new)
 		ft_error();
 	new->nbr = content;
