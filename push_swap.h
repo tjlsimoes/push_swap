@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 11:16:30 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:08:04 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int			stack_size(t_stack **s);
 
 void		sa(t_stack **a);
 void		ra(t_stack **a);
+void		rra(t_stack **a);
 
 #endif
