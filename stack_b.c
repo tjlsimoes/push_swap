@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_b.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/05 16:32:42 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/06 11:29:49 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,21 @@ void	stack_print(t_stack *s)
 		s = s->next;
 	}
 	ft_printf("\n");
+}
+
+t_stack	*get_node_by_idx(t_stack **s, int idx)
+{
+	int			i;
+	t_stack		*node;
+
+	if (!s || !*s)
+		return (NULL);
+	i = 0;
+	node = *s;
+	while (node->next != NULL && i < idx - 1)
+	{
+		node = node->next;
+		i++;
+	}
+	return (node);
 }
