@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_b.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 11:29:49 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:24:48 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,28 @@ void	stack_print(t_stack *s)
 	}
 	ft_printf("\n");
 }
+
+int	*get_node_idx(t_stack **s, int nbr)
+{
+	int			i;
+	t_stack		*node;
+
+	if (!s || !*s)
+		return (0);
+	i = 0;
+	node = *s;
+	while (node)
+	{
+		if (nbr == node->nbr)
+			return (i);
+		node = node->next;
+		i++;
+	}
+	return (-1);
+}
+// Note that it is get_node_idx() is returning -1
+// if it doesn't find a node with the nbr passed
+// as argument.
 
 t_stack	*get_node_by_idx(t_stack **s, int idx)
 {

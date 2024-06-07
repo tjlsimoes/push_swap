@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 10:42:29 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:25:29 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void		stack_initialize(int argc, char **argv, t_stack **a);
 
 void		free_stack(t_stack **s);
 t_stack		*get_node_by_idx(t_stack **s, int idx);
+int			*get_node_idx(t_stack **s, int nbr);
 t_stack		*last_on_stack(t_stack **s);
 t_stack		*stack_new(int content);
 void		stack_add_back(t_stack **s, t_stack *new);
