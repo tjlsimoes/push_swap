@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 10:40:14 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:04:45 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int get_min(t_stack **s)
 
 	if (!s || !*s)
 		return (0);
-	min = 0;
 	node = *s;
+	min = node->nbr;
 	while (node)
 	{
 		if (node->nbr < min)
@@ -37,8 +37,8 @@ int get_max(t_stack **s)
 
 	if (!s || !*s)
 		return (0);
-	max = 0;
 	node = *s;
+	max = node->nbr;
 	while (node)
 	{
 		if (node->nbr > max)
