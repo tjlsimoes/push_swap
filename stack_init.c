@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:13:22 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 16:39:38 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:30:28 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	numerics_input(int argc, char **argv, t_stack **a)
 	}
 }
 
-int		duplicate_q(t_stack **s)
+int	duplicate_q(t_stack **s)
 {
 	t_stack	*node;
 	t_stack	*other_node;
@@ -83,7 +83,6 @@ void	stack_initialize(int argc, char **argv, t_stack **a)
 		string_input(argc, argv, a);
 	else
 		numerics_input(argc, argv, a);
-
 	if (duplicate_q(a))
 		free_and_error(a);
 }

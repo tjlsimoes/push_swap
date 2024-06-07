@@ -6,16 +6,16 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 11:04:45 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:24:13 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_min(t_stack **s)
+int	get_min(t_stack **s)
 {
 	t_stack	*node;
-	int	min;
+	int		min;
 
 	if (!s || !*s)
 		return (0);
@@ -30,10 +30,10 @@ int get_min(t_stack **s)
 	return (min);
 }
 
-int get_max(t_stack **s)
+int	get_max(t_stack **s)
 {
 	t_stack	*node;
-	int	max;
+	int		max;
 
 	if (!s || !*s)
 		return (0);
@@ -47,3 +47,6 @@ int get_max(t_stack **s)
 	}
 	return (max);
 }
+
+// Should get_max() and get_min() return
+// 0 in case of error or some other value?
