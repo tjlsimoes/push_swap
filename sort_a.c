@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 11:28:10 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 12:33:16 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_three(t_stack	**a)
 	}
 	else
 	{
-		if (get_node_idx(a, get_min(a) == 1))
+		if (get_node_idx(a, get_min(a)) == 1)
 			apply_s(a, 'a');
 		else
 			apply_rr(a, 'a');
