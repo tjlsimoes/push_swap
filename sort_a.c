@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 12:33:16 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 13:21:54 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,33 @@ void	sort(t_stack **a, t_stack **b)
 		return ;
 	if (stack_size(a) == 2)
 		apply_s(a, 'a');
-	else
-	{
+	else if (stack_size(a) == 3)
 		sort_three(a);
+	else if (stack_size(a) == 4)
+	{
+		if (stack_size(a) > 3)
+			apply_pb(a, b);
+		if (!sorted_q(a))
+			sort_three(a);
+		if ((*b)->nbr > get_max(a))
+		{
+			apply_pa(a, b);
+			apply_r(a, 'a');
+		}
+		else if ((*b)->nbr < get_min(a))
+			apply_pa(a, b);
+		else if ((*b)->nbr < (*a)->next->nbr)
+		{
+			apply_pa(a, b);
+			apply_s(a, 'a');
+		}
+		else
+		{
+			apply_pa(a, b);
+			apply_rr(a, 'a');
+			apply_s(a, 'a');
+			apply_r(a, 'a');
+			apply_r(a, 'a');
+		}
 	}
 }
