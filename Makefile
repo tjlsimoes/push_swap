@@ -8,7 +8,7 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
 SRC := push_swap.c stack_a.c stack_b.c stack_init.c \
-sort.c operations.c \
+sort_a.c sort_b.c operations_a.c operations_b.c \
 error.c ft_atoi_alt.c ft_split_size.c \
 split_clear.c
 

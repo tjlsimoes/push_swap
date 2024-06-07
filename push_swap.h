@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/06 17:42:36 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/07 10:42:29 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int			stack_size(t_stack **s);
 
 int			get_max(t_stack **s);
 int			get_min(t_stack **s);
+void		sort(t_stack **a, t_stack **b);
 int			sorted_q(t_stack **s);
 
 void		s(t_stack **a);
@@ -51,5 +52,11 @@ void		r(t_stack **a);
 void		rr(t_stack **a);
 void		pa(t_stack **a, t_stack **b);
 void		pb(t_stack **a, t_stack **b);
+
+void		apply_s(t_stack **stack, char c);
+void		apply_r(t_stack **stack, char c);
+void		apply_rr(t_stack **stack, char c);
+void		apply_pa(t_stack **a, t_stack **b);
+void		apply_pb(t_stack **a, t_stack **b);
 
 #endif
