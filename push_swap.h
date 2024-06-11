@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 11:54:39 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:27:51 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ void		apply_r(t_stack **stack, char c);
 void		apply_rr(t_stack **stack, char c);
 void		apply_pa(t_stack **a, t_stack **b);
 void		apply_pb(t_stack **a, t_stack **b);
+void		apply_rrr(t_stack **a, t_stack **b);
+void		apply_rr_ab(t_stack **a, t_stack **b);
+void		apply_ss(t_stack **a, t_stack **b);
 
 int			best_nbr_moves_ba(t_stack **a, t_stack **b);
 int			idx_dest_stack_a(t_stack **a, int nbr_push);
