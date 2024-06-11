@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 11:57:24 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:26:35 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,26 +92,28 @@ void	sort_a(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		temp = *b;
-
+		ft_printf("Here!");
 		i = best_nbr_moves_ba(a, b);
 		while (i >= 0)
 		{
-			// if (i == case_rarb_a(a, b, temp->nbr))
-			// 	i = apply_rarb(a, b, temp->nbr, 'b');
-			// else if (i == case_rarrb_a(a, b, temp->nbr))
-			// 	i = apply_rarrb(a, b, temp->nbr, 'b');
-			// else if (i == case_rrarrb_a(a, b, temp->nbr))
-			// 	i = apply_rrarrb(a, b, temp->nbr, 'b');
-			// else if (i == case_rrarb_a(a, b, temp->nbr))
-			// 	i = apply_rrarb(a, b, temp->nbr, 'b');
-			// else
-			// 	temp = temp->next;
+			if (i == case_ra_rb_ba(a, b, temp->nbr))
+				i = apply_ra_rb(a, b, temp->nbr, 'b');
+			else if (i == case_ra_rrb_ba(a, b, temp->nbr))
+				i = apply_ra_rrb(a, b, temp->nbr, 'b');
+			else if (i == case_rra_rrb_ba(a, b, temp->nbr))
+				i = apply_rra_rrb(a, b, temp->nbr, 'b');
+			else if (i == case_rra_rb_ba(a, b, temp->nbr))
+				i = apply_rra_rb(a, b, temp->nbr, 'b');
+			else
+				temp = temp->next;
 		}
 	}
 }
 
 void	sort(t_stack **a, t_stack **b)
 {
+	int	i;
+
 	if (!a || !*a || !b)
 		return ;
 	if (stack_size(a) == 2)
@@ -149,5 +151,17 @@ void	sort(t_stack **a, t_stack **b)
 	{
 		sort_b(a, b);
 		sort_a(a, b);
+
+		i = get_node_idx(a, get_min(a));
+		if (i < stack_size(a) - i)
+		{
+			while ((*a)->nbr != get_min(a))
+				apply_r(a, 'a');
+		}
+		else
+		{
+			while ((*a)->nbr != get_min(a))
+				apply_rr(a, 'a');
+		}
 	}
 }

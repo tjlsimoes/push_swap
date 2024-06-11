@@ -6,10 +6,11 @@ PRINTF := printf/libftprintf.a
 CC := cc
 
 CFLAGS := -Wall -Wextra -Werror
+DEBUG_FLAGS = -g
 
 SRC := push_swap.c stack_a.c stack_b.c stack_init.c \
 sort_a.c sort_b.c \
-operations_a.c operations_b.c operations.c \
+operations_a.c operations_b.c operations_c.c operations_d.c\
 best_nbr_moves.c calcs_ba.c \
 error.c ft_atoi_alt.c ft_split_size.c \
 split_clear.c
@@ -33,6 +34,12 @@ fclean: clean
 	cd printf && $(MAKE) fclean
 	cd libft && $(MAKE) fclean
 	$(RM) $(NAME)
+
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: $(OBJ)
+	cd printf && $(MAKE)
+	cd libft && $(MAKE)
+	$(CC) -g $(CFLAGS) $(OBJ) $(PRINTF) $(LIBFT) -o $(NAME)
 
 re: fclean all
 

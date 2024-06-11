@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 11:55:45 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:20:35 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 	i = 1;
 	if (nbr_push < (*a)->nbr && nbr_push > (last_on_stack(a))->nbr)
 		i = 0;	// Why?
-	else if (nbr_push > ft_max(a) || nbr_push < ft_min(a))
+	else if (nbr_push > get_max(a) || nbr_push < get_min(a))
 		i = get_node_idx(a, get_min(a));
 	else
 	{
