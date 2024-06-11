@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 14:20:35 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:55:17 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,28 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 	{
 		temp = (*a)->next;
 		while (temp->nbr < nbr_push)
+		{
+			temp = temp->next;
+			i++;
+		}
+	}
+	return (i);
+}
+
+int	idx_dest_stack_b(t_stack **b, int nbr_push)
+{
+	int		i;
+	t_stack	*temp;
+
+	i = 1;
+	if (nbr_push > (*b)->nbr && nbr_push < (last_on_stack(b))->nbr)
+		i = 0;	// Why?
+	else if (nbr_push > get_max(b) || nbr_push < get_min(b))
+		i = get_node_idx(b, get_max(b));
+	else
+	{
+		temp = (*b)->next;
+		while (temp->nbr > nbr_push)
 		{
 			temp = temp->next;
 			i++;

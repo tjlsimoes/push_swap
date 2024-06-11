@@ -11,7 +11,7 @@ DEBUG_FLAGS = -g
 SRC := push_swap.c stack_a.c stack_b.c stack_init.c \
 sort_a.c sort_b.c \
 operations_a.c operations_b.c operations_c.c operations_d.c\
-best_nbr_moves.c calcs_ba.c \
+best_nbr_moves.c calcs_ba.c calcs_ab.c\
 error.c ft_atoi_alt.c ft_split_size.c \
 split_clear.c
 

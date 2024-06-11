@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 15:26:35 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:39:19 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void	sort_a(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		temp = *b;
-		ft_printf("Here!");
 		i = best_nbr_moves_ba(a, b);
 		while (i >= 0)
 		{
