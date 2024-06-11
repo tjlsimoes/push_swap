@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 11:31:28 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:55:45 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ int	get_node_idx(t_stack **s, int nbr)
 // if it doesn't find a node with the nbr passed
 // as argument.
 
+// Ayogun updates the found element's index to zero.
+// Why?
+
 t_stack	*get_node_by_idx(t_stack **s, int idx)
 {
 	int			i;
@@ -65,4 +68,26 @@ t_stack	*get_node_by_idx(t_stack **s, int idx)
 		i++;
 	}
 	return (node);
+}
+
+int	idx_dest_stack_a(t_stack **a, int nbr_push)
+{
+	int		i;
+	t_stack	*temp;
+
+	i = 1;
+	if (nbr_push < (*a)->nbr && nbr_push > (last_on_stack(a))->nbr)
+		i = 0;	// Why?
+	else if (nbr_push > ft_max(a) || nbr_push < ft_min(a))
+		i = get_node_idx(a, get_min(a));
+	else
+	{
+		temp = (*a)->next;
+		while (temp->nbr < nbr_push)
+		{
+			temp = temp->next;
+			i++;
+		}
+	}
+	return (i);
 }
