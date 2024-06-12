@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 13:51:53 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:16:26 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ t_stack	*get_node_by_idx(t_stack **s, int idx)
 int	idx_dest_stack_a(t_stack **a, int nbr_push)
 {
 	int		i;
-	t_stack	*temp;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
 	i = 1;
 	if (nbr_push < (*a)->nbr && nbr_push > (last_on_stack(a))->nbr)
@@ -82,10 +83,12 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 		i = get_node_idx(a, get_min(a));
 	else
 	{
-		temp = (*a)->next;
-		while (temp->nbr < nbr_push)
+		temp_a = *a;
+		temp_b = (*a)->next;
+		while (temp_a->nbr > nbr_push || temp_b->nbr < nbr_push)
 		{
-			temp = temp->next;
+			temp_b = temp_b->next;
+			temp_a = temp_a->next;
 			i++;
 		}
 	}
@@ -95,7 +98,8 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 int	idx_dest_stack_b(t_stack **b, int nbr_push)
 {
 	int		i;
-	t_stack	*temp;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
 	i = 1;
 	if (nbr_push > (*b)->nbr && nbr_push < (last_on_stack(b))->nbr)
@@ -104,12 +108,15 @@ int	idx_dest_stack_b(t_stack **b, int nbr_push)
 		i = get_node_idx(b, get_max(b));
 	else
 	{
-		temp = (*b)->next;
-		while (temp->nbr > nbr_push)
+		temp_a = (*b);
+		temp_b = (*b)->next;
+		while (temp_a->nbr < nbr_push || temp_b->nbr > nbr_push)
 		{
-			temp = temp->next;
+			temp_b = temp_b->next;
+			temp_a = temp_a->next;
 			i++;
 		}
 	}
 	return (i);
 }
+// Here.
