@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 15:39:19 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:57:22 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,41 @@ void	sort_three(t_stack	**a)
 	}
 }
 
+void	sort_till_three(t_stack **a, t_stack **b)
+{
+	t_stack		*temp;
+	int			i;
+
+	temp = *a;
+	while (stack_size(a) > 3 && !sorted_q(a))
+	{
+		temp = *a;
+		i = best_nbr_moves_ab(a, b);
+		while (i >= 0)
+		{
+			if (i == case_ra_rb_ab(a, b, temp->nbr))
+				i = apply_ra_rb(a, b, temp->nbr, 'a');
+			else if (i == case_rra_rrb_ab(a, b, temp->nbr))
+				i = apply_rra_rrb(a, b, temp->nbr, 'a');
+			else if (i == case_ra_rrb_ab(a, b, temp->nbr))
+				i = apply_ra_rrb(a, b, temp->nbr, 'a');
+			else if (i == case_rra_rb_ab(a, b, temp->nbr))
+				i = apply_rra_rb(a, b, temp->nbr, 'a');
+			else
+				temp = temp->next;
+		}
+	}
+}
+
+
 void	sort_b(t_stack **a, t_stack **b)
 {
 		if (stack_size(a) > 3)
 			apply_pb(a, b);
 		if (stack_size(a) > 3 && !sorted_q(a))
 			apply_pb(a, b);
+		if (stack_size(a) > 3 && !sorted_q(a))
+			sort_till_three(a, b);
 		if (!sorted_q(a))
 			sort_three(a);
 
@@ -119,34 +148,34 @@ void	sort(t_stack **a, t_stack **b)
 		apply_s(a, 'a');
 	else if (stack_size(a) == 3)
 		sort_three(a);
-	else if (stack_size(a) == 4)
-	{
-		if (stack_size(a) > 3)
-			apply_pb(a, b);
-		if (!sorted_q(a))
-			sort_three(a);
-		if ((*b)->nbr > get_max(a))
-		{
-			apply_pa(a, b);
-			apply_r(a, 'a');
-		}
-		else if ((*b)->nbr < get_min(a))
-			apply_pa(a, b);
-		else if ((*b)->nbr < (*a)->next->nbr)
-		{
-			apply_pa(a, b);
-			apply_s(a, 'a');
-		}
-		else
-		{
-			apply_pa(a, b);
-			apply_rr(a, 'a');
-			apply_s(a, 'a');
-			apply_r(a, 'a');
-			apply_r(a, 'a');
-		}
-	}
-	else if (stack_size(a) == 5)
+	// else if (stack_size(a) == 4)
+	// {
+	// 	if (stack_size(a) > 3)
+	// 		apply_pb(a, b);
+	// 	if (!sorted_q(a))
+	// 		sort_three(a);
+	// 	if ((*b)->nbr > get_max(a))
+	// 	{
+	// 		apply_pa(a, b);
+	// 		apply_r(a, 'a');
+	// 	}
+	// 	else if ((*b)->nbr < get_min(a))
+	// 		apply_pa(a, b);
+	// 	else if ((*b)->nbr < (*a)->next->nbr)
+	// 	{
+	// 		apply_pa(a, b);
+	// 		apply_s(a, 'a');
+	// 	}
+	// 	else
+	// 	{
+	// 		apply_pa(a, b);
+	// 		apply_rr(a, 'a');
+	// 		apply_s(a, 'a');
+	// 		apply_r(a, 'a');
+	// 		apply_r(a, 'a');
+	// 	}
+	// }
+	else
 	{
 		sort_b(a, b);
 		sort_a(a, b);

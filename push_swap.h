@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 15:55:15 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:42:16 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int			get_max(t_stack **s);
 int			get_min(t_stack **s);
 void		sort(t_stack **a, t_stack **b);
 int			sorted_q(t_stack **s);
+void		sort_till_three(t_stack **a, t_stack **b);
 
 void		s(t_stack **a);
 void		r(t_stack **a);
@@ -69,6 +70,7 @@ int			apply_ra_rrb(t_stack **a, t_stack **b, int n, char c);
 int			apply_rra_rb(t_stack **a, t_stack **b, int n, char c);
 
 int			best_nbr_moves_ba(t_stack **a, t_stack **b);
+int			best_nbr_moves_ab(t_stack **a, t_stack **b);
 int			idx_dest_stack_a(t_stack **a, int nbr_push);
 int			idx_dest_stack_b(t_stack **b, int nbr_push);
 
