@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_b.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 15:55:17 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:51:53 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 
 	i = 1;
 	if (nbr_push < (*a)->nbr && nbr_push > (last_on_stack(a))->nbr)
-		i = 0;	// Why?
+		i = 0; // Why?
 	else if (nbr_push > get_max(a) || nbr_push < get_min(a))
 		i = get_node_idx(a, get_min(a));
 	else
@@ -99,7 +99,7 @@ int	idx_dest_stack_b(t_stack **b, int nbr_push)
 
 	i = 1;
 	if (nbr_push > (*b)->nbr && nbr_push < (last_on_stack(b))->nbr)
-		i = 0;	// Why?
+		i = 0; // Why?
 	else if (nbr_push > get_max(b) || nbr_push < get_min(b))
 		i = get_node_idx(b, get_max(b));
 	else

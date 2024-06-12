@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   sort_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 11:24:13 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:50:54 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	sorted_q(t_stack **s)
+{
+	t_stack	*node;
+	t_stack	*next;
+
+	if (!s || !*s)
+		return (0);
+	node = *s;
+	next = node->next;
+	while (node && next)
+	{
+		if (node->nbr > next->nbr)
+			return (0);
+		node = node->next;
+		next = next->next;
+	}
+	return (1);
+}
 
 int	get_min(t_stack **s)
 {

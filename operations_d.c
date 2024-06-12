@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:59:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 11:54:44 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:45:39 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	apply_ra_rb(t_stack **a, t_stack **b, int n, char c)
 {
-
 	if (c == 'a')
 	{
 		while ((*a)->nbr != n && idx_dest_stack_b(b, n) > 0)

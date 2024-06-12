@@ -6,30 +6,11 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 11:57:22 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:51:13 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	sorted_q(t_stack **s)
-{
-	t_stack	*node;
-	t_stack	*next;
-
-	if (!s || !*s)
-		return (0);
-	node = *s;
-	next = node->next;
-	while (node && next)
-	{
-		if (node->nbr > next->nbr)
-			return (0);
-		node = node->next;
-		next = next->next;
-	}
-	return (1);
-}
 
 void	sort_three(t_stack	**a)
 {
@@ -79,38 +60,16 @@ void	sort_till_three(t_stack **a, t_stack **b)
 	}
 }
 
-
 void	sort_b(t_stack **a, t_stack **b)
 {
-		if (stack_size(a) > 3)
-			apply_pb(a, b);
-		if (stack_size(a) > 3 && !sorted_q(a))
-			apply_pb(a, b);
-		if (stack_size(a) > 3 && !sorted_q(a))
-			sort_till_three(a, b);
-		if (!sorted_q(a))
-			sort_three(a);
-
-		// if ((*b)->nbr > get_max(a))
-		// {
-		// 	apply_pa(a, b);
-		// 	apply_r(a, 'a');
-		// }
-		// else if ((*b)->nbr < get_min(a))
-		// 	apply_pa(a, b);
-		// else if ((*b)->nbr < (*a)->next->nbr)
-		// {
-		// 	apply_pa(a, b);
-		// 	apply_s(a, 'a');
-		// }
-		// else
-		// {
-		// 	apply_pa(a, b);
-		// 	apply_rr(a, 'a');
-		// 	apply_s(a, 'a');
-		// 	apply_r(a, 'a');
-		// 	apply_r(a, 'a');
-		// }
+	if (stack_size(a) > 3)
+		apply_pb(a, b);
+	if (stack_size(a) > 3 && !sorted_q(a))
+		apply_pb(a, b);
+	if (stack_size(a) > 3 && !sorted_q(a))
+		sort_till_three(a, b);
+	if (!sorted_q(a))
+		sort_three(a);
 }
 
 void	sort_a(t_stack **a, t_stack **b)
@@ -146,40 +105,10 @@ void	sort(t_stack **a, t_stack **b)
 		return ;
 	if (stack_size(a) == 2)
 		apply_s(a, 'a');
-	else if (stack_size(a) == 3)
-		sort_three(a);
-	// else if (stack_size(a) == 4)
-	// {
-	// 	if (stack_size(a) > 3)
-	// 		apply_pb(a, b);
-	// 	if (!sorted_q(a))
-	// 		sort_three(a);
-	// 	if ((*b)->nbr > get_max(a))
-	// 	{
-	// 		apply_pa(a, b);
-	// 		apply_r(a, 'a');
-	// 	}
-	// 	else if ((*b)->nbr < get_min(a))
-	// 		apply_pa(a, b);
-	// 	else if ((*b)->nbr < (*a)->next->nbr)
-	// 	{
-	// 		apply_pa(a, b);
-	// 		apply_s(a, 'a');
-	// 	}
-	// 	else
-	// 	{
-	// 		apply_pa(a, b);
-	// 		apply_rr(a, 'a');
-	// 		apply_s(a, 'a');
-	// 		apply_r(a, 'a');
-	// 		apply_r(a, 'a');
-	// 	}
-	// }
 	else
 	{
 		sort_b(a, b);
 		sort_a(a, b);
-
 		i = get_node_idx(a, get_min(a));
 		if (i < stack_size(a) - i)
 		{
