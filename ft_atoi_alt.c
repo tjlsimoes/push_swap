@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:21:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/04 16:14:46 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:28:10 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ long long	ft_atoi_alt(char *str)
 	nbr = 0;
 	while (ft_isspace(*str))
 		str++;
-	if (*str == '+' || *str == '-')
+	if ((*str == '+' || *str == '-') && ft_isdigit(*(str + 1)))
 	{
 		if (*str == '-')
 			sign = -1;

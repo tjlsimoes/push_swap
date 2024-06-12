@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:13:22 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/07 11:30:28 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:38:25 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	string_input(int argc, char **argv, t_stack **a)
 	int			i;
 
 	i = 0;
+	if (!argv[1][0])
+		free_and_error(a);
 	strs = ft_split(argv[1], ' ');
 	argc = ft_split_size(strs);
 	while (i < argc)
