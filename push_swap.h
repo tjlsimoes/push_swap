@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 18:25:37 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:26:28 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ typedef struct stack
 {
 	long			nbr;
 	struct stack	*next;
-	long			idx;
 }	t_stack;
 
 void		free_and_error(t_stack **a);
