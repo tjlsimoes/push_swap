@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:59:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/11 15:26:15 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:54:44 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,14 @@ int	apply_ra_rb(t_stack **a, t_stack **b, int n, char c)
 
 	if (c == 'a')
 	{
-		// apply_pb(a, b);
+		while ((*a)->nbr != n && idx_dest_stack_b(b, n) > 0)
+			apply_rr_ab(a, b);
+		// Why idx_dest_stack_a(a, n) ?? Ensure min is on top?
+		while ((*a)->nbr != n)
+			apply_r(a, 'a');
+		while (idx_dest_stack_b(b, n) > 0)
+			apply_r(b, 'b');
+		apply_pb(a, b);
 	}
 	else
 	{
@@ -37,7 +44,14 @@ int	apply_rra_rrb(t_stack **a, t_stack **b, int n, char c)
 {
 	if (c == 'a')
 	{
-		// apply_pb(a, b);
+		while ((*a)->nbr != n && idx_dest_stack_b(b, n) > 0)
+			apply_rrr(a, b);
+		// Why idx_dest_stack_a(a, n) ?? Ensure min is on top?
+		while ((*a)->nbr != n)
+			apply_rr(a, 'a');
+		while (idx_dest_stack_b(b, n) > 0)
+			apply_rr(b, 'b');
+		apply_pb(a, b);
 	}
 	else
 	{
@@ -57,7 +71,11 @@ int	apply_ra_rrb(t_stack **a, t_stack **b, int n, char c)
 {
 	if (c == 'a')
 	{
-		// apply_pb(a, b);
+		while ((*a)->nbr != n)
+			apply_r(a, 'a');
+		while (idx_dest_stack_b(b, n) > 0)
+			apply_rr(b, 'b');
+		apply_pb(a, b);
 	}
 	else
 	{
@@ -74,7 +92,11 @@ int	apply_rra_rb(t_stack **a, t_stack **b, int n, char c)
 {
 	if (c == 'a')
 	{
-		// apply_pb(a, b);
+		while ((*a)->nbr != n)
+			apply_rr(a, 'a');
+		while (idx_dest_stack_b(b, n) > 0)
+			apply_r(b, 'b');
+		apply_pb(a, b);
 	}
 	else
 	{
