@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 16:16:26 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:25:16 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,6 @@ int	get_node_idx(t_stack **s, int nbr)
 // if it doesn't find a node with the nbr passed
 // as argument.
 
-// Ayogun updates the found element's index to zero.
-// Why?
-
 t_stack	*get_node_by_idx(t_stack **s, int idx)
 {
 	int			i;
@@ -78,7 +75,7 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 
 	i = 1;
 	if (nbr_push < (*a)->nbr && nbr_push > (last_on_stack(a))->nbr)
-		i = 0; // Why?
+		i = 0;
 	else if (nbr_push > get_max(a) || nbr_push < get_min(a))
 		i = get_node_idx(a, get_min(a));
 	else
@@ -95,6 +92,19 @@ int	idx_dest_stack_a(t_stack **a, int nbr_push)
 	return (i);
 }
 
+// if (nbr_push < (*a)->nbr && nbr_push > (last_on_stack(a))->nbr)
+// 	i = 0;
+// Means: top of stack to which nbr is being pushed is ready to
+//        receive said number; that is, it will be correctly
+//        placed in between a number lesser than nbr_push and
+//        another that is greater than nbr_push.
+// e.g. stack a = 3, 4, 1 ; b = 2.
+// Note difference between idx_dest_stack_a() and idx_dest_stack_b()
+// in what regards to this condition amounts to the desire of keeping
+// Stack A sorted in increasing order and the inverse desire of keeping
+// Stack B sorted in decreasing order (to automatically get increasing
+// order when pushing back to Stack A).
+
 int	idx_dest_stack_b(t_stack **b, int nbr_push)
 {
 	int		i;
@@ -103,7 +113,7 @@ int	idx_dest_stack_b(t_stack **b, int nbr_push)
 
 	i = 1;
 	if (nbr_push > (*b)->nbr && nbr_push < (last_on_stack(b))->nbr)
-		i = 0; // Why?
+		i = 0;
 	else if (nbr_push > get_max(b) || nbr_push < get_min(b))
 		i = get_node_idx(b, get_max(b));
 	else
@@ -119,4 +129,3 @@ int	idx_dest_stack_b(t_stack **b, int nbr_push)
 	}
 	return (i);
 }
-// Here.
