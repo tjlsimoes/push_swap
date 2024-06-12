@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:15:43 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 13:47:48 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:58:21 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	case_rra_rrb_ba(t_stack **a, t_stack **b, int n)
 	i = 0;
 	if (idx_dest_stack_a(a, n))
 		i = stack_size(a) - idx_dest_stack_a(a, n);
-	if (i < stack_size(b) - get_node_idx(b, n) && get_node_idx(b, n))
+	if (i < (stack_size(b) - get_node_idx(b, n)) && get_node_idx(b, n))
 		i = stack_size(b) - get_node_idx(b, n);
 	return (i);
 }

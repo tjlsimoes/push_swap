@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:54:42 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 13:51:13 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:19:58 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	sort_till_three(t_stack **a, t_stack **b)
 	t_stack		*temp;
 	int			i;
 
-	temp = *a;
 	while (stack_size(a) > 3 && !sorted_q(a))
 	{
 		temp = *a;
