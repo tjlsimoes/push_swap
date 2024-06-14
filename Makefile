@@ -1,4 +1,5 @@
 NAME := push_swap
+CHECKER_NAME := checker
 
 LIBFT := libft/libft.a
 PRINTF := printf/libftprintf.a
@@ -23,6 +24,12 @@ $(NAME): $(OBJ)
 	cd printf && $(MAKE)
 	cd libft && $(MAKE)
 	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) $(LIBFT) -o $(NAME)
+## $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+bonus: $(OBJ)
+	cd printf && $(MAKE)
+	cd libft && $(MAKE)
+	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) $(LIBFT) -o $(CHECKER_NAME)
 ## $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
