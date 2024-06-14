@@ -6,74 +6,36 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 10:12:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 16:21:40 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:54:08 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	alt_lstclear(t_list **s)
+void	execute_move(t_list **moves, const char *str, t_stack **a, t_stack **b)
 {
-	t_list	*previous;
-	t_list	*current;
-
-	if (!s || !*s)
-		return ;
-	current = *s;
-	while (current != NULL)
-	{
-		previous = current;
-		current = previous->next;
-		free(previous->content);
-		free(previous);
-	}
-	*s = NULL;
-}
-
-void	execute_move(t_list **moves, char *str, t_stack **a, t_stack **b)
-{
-	if (str[0] == 'r' && str[1] == 'r' && str[2] != '\n' )
-	{
-		if (str[2] == 'a' && str[3] == '\n')
-			rr(a);
-		else if (str[2] == 'b' && str[3] == '\n')
-			rr(b);
-		else if (str[2] == 'r' && str[3] == '\n')
-			rrr(a, b);
-		else
-			free_lab_error(moves, a, b);
-	}
-	else if (str[0] == 'r')
-	{
-		if (str[1] == 'a' && str[2] == '\n')
-			r(a);
-		else if (str[1] == 'b' && str[2] == '\n')
-			r(b);
-		else if (str[1] == 'r' && str[2] == '\n')
-			rr_ab(a, b);
-		else
-			free_lab_error(moves, a, b);
-	}
-	else if (str[0] == 's')
-	{
-		if (str[1] == 'a' && str[2] == '\n')
-			s(a);
-		else if (str[1] == 'b' && str[2] == '\n')
-			s(b);
-		else if (str[1] == 'r' && str[2] == '\n')
-			ss(a, b);
-		else
-			free_lab_error(moves, a, b);
-	}
-	else if (str[0] == 'p')
-	{
-		if (str[1] == 'a' && str[2] == '\n')
-			pa(a, b);
-		else if (str[1] == 'b' && str[2] == '\n')
-			pb(a, b);
-		else
-			free_lab_error(moves, a, b);
-	}
+	if (!ft_strncmp("rra\n", str, ft_strlen("rra\n")))
+		rr(a);
+	else if (!ft_strncmp("rrb\n", str, ft_strlen("rrb\n")))
+		rr(b);
+	else if (!ft_strncmp("rrr\n", str, ft_strlen("rrr\n")))
+		rrr(a, b);
+	else if (!ft_strncmp("ra\n", str, ft_strlen("ra\n")))
+		r(a);
+	else if (!ft_strncmp("rb\n", str, ft_strlen("rb\n")))
+		r(b);
+	else if (!ft_strncmp("rr\n", str, ft_strlen("rr\n")))
+		rr_ab(a, b);
+	else if (!ft_strncmp("sa\n", str, ft_strlen("sa\n")))
+		s(a);
+	else if (!ft_strncmp("sb\n", str, ft_strlen("sb\n")))
+		s(b);
+	else if (!ft_strncmp("ss\n", str, ft_strlen("ss\n")))
+		ss(a, b);
+	else if (!ft_strncmp("pa\n", str, ft_strlen("pa\n")))
+		pa(a, b);
+	else if (!ft_strncmp("pb\n", str, ft_strlen("pb\n")))
+		pb(a, b);
 	else
 		free_lab_error(moves, a, b);
 }
@@ -87,10 +49,10 @@ void	execute_moves(t_list **move, t_stack **a, t_stack **b)
 	temp = *move;
 	while (temp)
 	{
-		execute_move(move, (char *)temp->content, a, b);
+		execute_move(move, (const char *)temp->content, a, b);
 		temp = temp->next;
 	}
-	alt_lstclear(move);
+	ft_lstclear(move, (*free));
 }
 
 void	list_print(t_list *s)
@@ -109,30 +71,37 @@ void	list_print(t_list *s)
 	ft_printf("\n");
 }
 
+int	list_init(t_list **move)
+{
+	char	*line;
+
+	if (!move)
+		return (0);
+	line = get_next_line(0);
+	if (line)
+	{
+		if (!(*move))
+			*move = ft_lstnew((char *)line);
+		else
+			ft_lstadd_back(move, ft_lstnew(line));
+		return (1);
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack		*a;
 	t_stack		*b;
 	t_list		*move;
-	char		*line;
 
 	a = NULL;
 	b = NULL;
 	move = NULL;
 	stack_initialize(argc, argv, &a);
-	// if (sorted_q(&a))
-	// 	ft_printf("OK\n");
 	while (1)
 	{
-		line = get_next_line(0);
-		if (line)
-		{
-			if (!move)
-				move = ft_lstnew((char *)line);
-			else
-				ft_lstadd_back(&move, ft_lstnew(line));
-		}
-		else
+		if (!list_init(&move))
 			break ;
 	}
 	execute_moves(&move, &a, &b);
@@ -144,45 +113,3 @@ int	main(int argc, char **argv)
 	free_stack(&b);
 	return (0);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	t_stack		*a;
-// 	t_stack		*b;
-// 	t_list		*move;
-// 	char		*line;
-
-// 	a = NULL;
-// 	b = NULL;
-// 	move = NULL;
-// 	stack_initialize(argc, argv, &a);
-// 	// if (sorted_q(&a))
-// 	// 	ft_printf("OK\n");
-// 	while (1)
-// 	{
-// 		line = get_next_line(0);
-// 		if (line)
-// 		{
-// 			if (!move)
-// 				move = ft_lstnew((char *)line);
-// 			else
-// 				ft_lstadd_back(&move, ft_lstnew(line));
-// 			// ft_printf("%s", line);
-// 			// ft_printf("%d\n", ft_strlen(line));
-// 			////// free(line);
-// 		}
-// 		else
-// 			break ;
-// 	}
-// 	// list_print(move);
-// 	// alt_lstclear(&move);
-// 	execute_moves(&move, &a, &b);
-// 	if (sorted_q(&a))
-// 		ft_printf("OK\n");
-// 	else
-// 		ft_printf("KO\n");
-// 	stack_print(a);
-// 	free_stack(&a);
-// 	free_stack(&b);
-// 	return (0);
-// }

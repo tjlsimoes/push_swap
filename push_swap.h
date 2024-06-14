@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 12:35:54 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:54:01 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ int			case_ra_rrb_ab(t_stack **a, t_stack **b, int n);
 int			case_rra_rb_ab(t_stack **a, t_stack **b, int n);
 
 
-void		alt_lstclear(t_list **lst);
-void		execute_move(t_list **moves, char *str, t_stack **a, t_stack **b);
+int			list_init(t_list **move);
+void		execute_move(t_list **moves, const char *str, t_stack **a, t_stack **b);
 void		execute_moves(t_list **move, t_stack **a, t_stack **b);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:22:01 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 12:34:10 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:34:18 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_lab_error(t_list **moves, t_stack **a, t_stack **b)
 {
-	alt_lstclear(moves);
+	ft_lstclear(moves, (*free));
 	free_stack(a);
 	free_stack(b);
 	ft_error();
