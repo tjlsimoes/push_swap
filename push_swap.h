@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 16:54:01 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:59:35 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int			case_rra_rb_ab(t_stack **a, t_stack **b, int n);
 
 
 int			list_init(t_list **move);
+void		list_print(t_list *s);
 void		execute_move(t_list **moves, const char *str, t_stack **a, t_stack **b);
 void		execute_moves(t_list **move, t_stack **a, t_stack **b);
 
