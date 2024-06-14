@@ -1,3 +1,40 @@
+// {
+// 	// Use IntelliSense to learn about possible attributes.
+// 	// Hover to view descriptions of existing attributes.
+// 	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+// 	"version": "0.2.0",
+// 	"configurations": [
+// 		{
+// 			"name": "(gdb) Launch",
+// 			"type": "cppdbg",
+// 			"request": "launch",
+// 			"program": "${workspaceFolder}/push_swap",
+// 			"args": ["2", "3", "4", "1"],
+// 			// "args": ["2", "3", "4", "5", "1",],
+// 			// "args": ["2", "3", "4", "5", "6", "1",],
+// 			// "args": ["50", "25", "73", "10", "80", "64", "91", "98", "62", "1", "58", "88", "8", "33", "31", "95", "63", "49", "41", "12", "67", "26", "2", "70", "65", "43", "51", "87", "84", "11", "85", "28", "59", "54", "96", "81", "35", "39", "6", "36", "82", "78", "27", "55", "42", "53", "24", "9", "0", "32", "37", "52", "20", "17", "83", "46", "3", "60", "92", "89", "34", "68", "5", "40", "18", "21", "93", "86", "99", "79", "23", "76", "22", "29", "90", "56", "19", "44", "45", "38", "72", "97", "13", "77", "47", "48", "74", "66", "94", "7", "69", "30", "61", "71", "75", "4", "57", "16", "14", "15"],
+// 			"stopAtEntry": false,
+// 			"cwd": "${fileDirname}",
+// 			"environment": [],
+// 			"externalConsole": false,
+// 			"MIMode": "gdb",
+// 			"setupCommands": [
+// 				{
+// 					"description": "Enable pretty-printing for gdb",
+// 					"text": "-enable-pretty-printing",
+// 					"ignoreFailures": true
+// 				},
+// 				{
+// 					"description": "Set Disassembly Flavor to Intel",
+// 					"text": "-gdb-set disassembly-flavor intel",
+// 					"ignoreFailures": true
+// 				}
+// 			]
+// 		}
+
+// 	]
+// }
+
 {
 	// Use IntelliSense to learn about possible attributes.
 	// Hover to view descriptions of existing attributes.
@@ -8,7 +45,7 @@
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/push_swap",
+			"program": "${workspaceFolder}/checker",
 			"args": ["2", "3", "4", "1"],
 			// "args": ["2", "3", "4", "5", "1",],
 			// "args": ["2", "3", "4", "5", "6", "1",],
