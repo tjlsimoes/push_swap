@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 18:26:28 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/14 12:35:54 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct stack
 	struct stack	*next;
 }	t_stack;
 
+void		free_lab_error(t_list **moves, t_stack **a, t_stack **b);
 void		free_and_error(t_stack **a);
 void		ft_error(void);
 
@@ -53,6 +54,9 @@ void		r(t_stack **a);
 void		rr(t_stack **a);
 void		pa(t_stack **a, t_stack **b);
 void		pb(t_stack **a, t_stack **b);
+void		rrr(t_stack **a, t_stack **b);
+void		rr_ab(t_stack **a, t_stack **b);
+void		ss(t_stack **a, t_stack **b);
 
 void		apply_s(t_stack **stack, char c);
 void		apply_r(t_stack **stack, char c);
@@ -82,5 +86,10 @@ int			case_ra_rb_ab(t_stack **a, t_stack **b, int n);
 int			case_rra_rrb_ab(t_stack **a, t_stack **b, int n);
 int			case_ra_rrb_ab(t_stack **a, t_stack **b, int n);
 int			case_rra_rb_ab(t_stack **a, t_stack **b, int n);
+
+
+void		alt_lstclear(t_list **lst);
+void		execute_move(t_list **moves, char *str, t_stack **a, t_stack **b);
+void		execute_moves(t_list **move, t_stack **a, t_stack **b);
 
 #endif
