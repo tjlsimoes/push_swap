@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:24:07 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 12:21:07 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:15:34 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,4 @@ void	ss(t_stack **a, t_stack **b)
 {
 	s(a);
 	s(b);
-}
-
-void	apply_ss(t_stack **a, t_stack **b)
-{
-	s(a);
-	s(b);
-	ft_printf("ss\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:19 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 16:59:35 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:14:14 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int			idx_dest_stack_a(t_stack **a, int nbr_push);
 int			idx_dest_stack_b(t_stack **b, int nbr_push);
 
 int			case_ra_rb_ba(t_stack **a, t_stack **b, int n);
-int			case_rra_rrb_ba(t_stack **a, t_stack **b, int n);
+int			case_rra_rrb_ba(t_stack **a, 
+				t_stack **b, int n);
 int			case_ra_rrb_ba(t_stack **a, t_stack **b, int n);
 int			case_rra_rb_ba(t_stack **a, t_stack **b, int n);
 
@@ -87,10 +88,10 @@ int			case_rra_rrb_ab(t_stack **a, t_stack **b, int n);
 int			case_ra_rrb_ab(t_stack **a, t_stack **b, int n);
 int			case_rra_rb_ab(t_stack **a, t_stack **b, int n);
 
-
 int			list_init(t_list **move);
 void		list_print(t_list *s);
-void		execute_move(t_list **moves, const char *str, t_stack **a, t_stack **b);
+void		execute_move(t_list **moves, 
+				const char *str, t_stack **a, t_stack **b);
 void		execute_moves(t_list **move, t_stack **a, t_stack **b);
 
 #endif

@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   operations_d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:59:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 17:27:30 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:15:30 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	apply_ss(t_stack **a, t_stack **b)
+{
+	s(a);
+	s(b);
+	ft_printf("ss\n");
+}
 
 int	apply_ra_rb(t_stack **a, t_stack **b, int n, char c)
 {
