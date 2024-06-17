@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:13:22 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/12 14:38:25 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:35:32 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	numerics_input(int argc, char **argv, t_stack **a)
 	i = 1;
 	while (i < argc)
 	{
+		if (ft_strlen(argv[i]) == 0)
+			free_and_error(a);
 		nbr = ft_atoi_alt(argv[i]);
 		if (nbr == 2147483648)
 			free_and_error(a);
