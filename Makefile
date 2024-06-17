@@ -35,7 +35,9 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) $(LIBFT) -o $(NAME)
 ## $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-bonus: $(CHECKER_OBJ)
+bonus: $(CHECKER_NAME)
+
+$(CHECKER_NAME): $(CHECKER_OBJ)
 	cd printf && $(MAKE)
 	cd libft && $(MAKE)
 	$(CC) $(CFLAGS) $(CHECKER_OBJ) $(PRINTF) $(LIBFT) -o $(CHECKER_NAME)
