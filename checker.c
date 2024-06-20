@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l <tjorge-l@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 10:12:58 by tjorge-l          #+#    #+#             */
-/*   Updated: 2024/06/14 16:54:08 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:51:06 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	move = NULL;
+	if (argc == 1)
+		return (1);
 	stack_initialize(argc, argv, &a);
 	while (1)
 	{
